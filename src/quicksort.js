@@ -1,4 +1,14 @@
-(function(window) {
+(function(root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD
+        define(['quicksort'], factory);
+    } else if (typeof exports === 'object') {
+        // Node, CommonJS
+        module.exports = factory(require('quicksort'));
+    } else {
+        root.returnExports = factory(root.quicksort);
+    }
+}(this, function(window) {
 
     'use strict';
 
@@ -25,4 +35,5 @@
         return quicksort(left).concat([pivot], quicksort(right));
     }
 
-})(this);
+    return quicksort;
+}));
