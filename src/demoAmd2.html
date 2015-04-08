@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+
+</head>
+<body>
+<script src="requirejs/require.js" type="text/javascript"></script>
+<script type="text/javascript">
+    requirejs.config({
+        baseUrl: '/demos/sort/src/' ,
+        waitSeconds: 200,
+        paths: {
+            // zepto: 'lib/zepto',
+            // jHash: 'lib/jhash',
+            // handlebars: 'lib/handlebars',
+            // underscore: 'lib/underscore',
+            // Deferred: 'lib/deferred',
+            // DataCenter: 'model/datacenter',
+            // iscroll: 'lib/iscroll',
+            // fastclick: 'lib/fastclick',
+            // wxstat: 'util/wxstat'
+        },
+        'shim': {
+            // iscroll: {
+            //     exports: 'IScroll'
+            // },
+            // zepto: {
+            //     exports: '$'
+            // },
+            // jHash: {
+            //     exports: 'jHash'
+            // },
+            // handlebars: {
+            //     exports: 'Handlebars'
+            // },
+            // underscore: {
+            //     exports: '_'
+            // },
+            // Deferred: {
+            //     deps: ['underscore'],
+            //     exports: 'Deferred'
+            // }
+        }
+    })(['requirejs/quicksortAmd'],function( quicksort ){
+
+            var arr=[34, 1, 23, 4, 67, 107, 36, 90, 502, 204, 109];
+            arr = quicksort(arr);
+
+            console.log(arr);
+    });
+</script>
+</body>
+</html>
