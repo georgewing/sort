@@ -7,11 +7,27 @@
 <meta name="description" content="">
 <meta name="keywords" content="">
 <link href="" rel="stylesheet">
-<script src="quick-cmd.js"></script>
+<script src="seajs/sea.js"></script>
 <script>
-	var arr=[34, 1, 23, 4, 67, 107, 36, 90, 502, 204, 109];
-	arr = exports.quicksort(arr);
-	console.log(arr);
+	seajs.config({
+		base: '/demos/sort/src/seajs',
+		alias: {
+
+		}
+	});
+
+	seajs.use(['quicksort.js','common.js'], function(modA, modB){
+
+		var arr=[34, 1, 23, 4, 67, 107, 36, 90, 502, 204, 109];
+		arr = modA.quicksort(arr);
+		console.log(arr);
+
+		var m = 10, n = 18;
+
+		console.log(modB.add(m, n));
+	});
+
+	
 </script>
 </head>
 <body>
